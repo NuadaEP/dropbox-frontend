@@ -30,15 +30,15 @@ export default class Box extends Component {
 
     io.emit("connectRoom", id);
 
-    io.on("file", data => {
+    io.on("file", (data) => {
       this.setState({
-        box: { ...this.state.box, files: [data, ...this.state.box.files] }
+        box: { ...this.state.box, files: [data, ...this.state.box.files] },
       });
     });
   };
 
-  handleUpload = files => {
-    files.forEach(file => {
+  handleUpload = (files) => {
+    files.forEach((file) => {
       const data = new FormData();
 
       const { id } = this.props.match.params;
@@ -55,7 +55,7 @@ export default class Box extends Component {
     return (
       <div id="box-container">
         <header>
-          <img src={logo} alt="image" />
+          <img src={logo} alt="uploaded images" />
           <h1>{box.title}</h1>
         </header>
 
@@ -71,9 +71,14 @@ export default class Box extends Component {
 
         <ul>
           {box.files &&
-            box.files.map(file => (
+            box.files.map((file) => (
               <li key={file._id}>
-                <a href={file.url} target="_blank" className="fileInfo">
+                <a
+                  href={file.url}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  className="fileInfo"
+                >
                   <MdInsertDriveFile size={24} color="#A5Cfff" />
                   <strong>{file.title}</strong>
                 </a>

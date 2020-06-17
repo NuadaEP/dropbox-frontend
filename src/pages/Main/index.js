@@ -6,14 +6,14 @@ import api from "../../services/api";
 
 export default class Main extends Component {
   state = {
-    newBox: ""
+    newBox: "",
   };
 
-  handleSubmit = async event => {
+  handleSubmit = async (event) => {
     event.preventDefault();
 
     const { data } = await api.post("boxes", {
-      title: this.state.newBox
+      title: this.state.newBox,
     });
 
     this.props.history.push(`/box/${data._id}`);
@@ -23,7 +23,7 @@ export default class Main extends Component {
     return (
       <div id="main-container">
         <form onSubmit={this.handleSubmit}>
-          <img src={logo} />
+          <img src={logo} alt="application logo" />
           <input
             placeholder="Criar um box"
             value={this.state.newBox}
