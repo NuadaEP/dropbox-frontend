@@ -18,3 +18,6 @@ and than run:
 or
 
 ### `yarn start`
+
+Than you will get this:
+![](src/assets/app.gif)
