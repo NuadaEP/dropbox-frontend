@@ -26,7 +26,7 @@ export default class Box extends Component {
   subscribeToNewFiles = () => {
     const { id } = this.props.match.params;
 
-    const io = socket("https://oministack-backend.herokuapp.com");
+    const io = socket(process.env.REACT_APP_API_URL);
 
     io.emit("connectRoom", id);
 
