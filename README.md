@@ -1,4 +1,4 @@
-This project is hosted [Here](#).
+This project is hosted [Here](https://dropbox-web.herokuapp.com/).
 
 ## How can I run it?
 
@@ -18,3 +18,6 @@ and than run:
 or
 
 ### `yarn start`
+
+Than you will get this:
+![](src/assets/app.gif)
